@@ -1,9 +1,5 @@
-// import MainDashboard from "./Screen/MainDashboard";
 import {
-	Button,
 	View,
-	Text,
-	Pressable,
 	StyleSheet,
 	TouchableOpacity,
 	StyleProp,
@@ -14,20 +10,15 @@ import {
 	TabRouter,
 	createNavigatorFactory,
 } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import PersonalInfo from "./Screen/PersonalInfo";
+
 import {
 	DefaultNavigatorOptions,
 	ParamListBase,
-	CommonActions,
 	TabActions,
 	TabNavigationState,
 	TabRouterOptions,
 } from "@react-navigation/native";
-import { ComponentElement, useState } from "react";
 
-// const Stack = createNativeStackNavigator();
 type Props = DefaultNavigatorOptions<
 	ParamListBase,
 	TabNavigationState<ParamListBase>,

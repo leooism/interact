@@ -6,6 +6,7 @@ const My = createMyNavigator();
 import { Ionicons } from "@expo/vector-icons";
 
 import React from "react";
+import MainDashboard from "../Screen/MainDashboard";
 function Test() {
 	return <Text>Hi</Text>;
 }
@@ -13,19 +14,21 @@ export default function MainNavigator() {
 	return (
 		<My.Navigator
 			tabBarStyle={{
-				width: "90%",
+				width: "100%",
 				elevation: 2,
-				borderRadius: 20,
+				borderTopEndRadius: 10,
 				flexDirection: "row",
-				gap: 20,
+				gap: 30,
 				padding: 5,
 				justifyContent: "center",
 				alignItems: "center",
-				marginVertical: 10,
-				marginHorizontal: 20,
+				marginVertical: 0,
+				// marginHorizontal: 20,
 				position: "relative",
 				backgroundColor: "white",
 			}}
+			initialRouteName="Interact"
+			contentStyle={{}}
 		>
 			<My.Screen
 				name="Drive"
@@ -53,7 +56,7 @@ export default function MainNavigator() {
 
 			<My.Screen
 				name="Interact"
-				component={Test}
+				component={MainDashboard}
 				options={{
 					type: "image",
 					style: {
@@ -63,6 +66,7 @@ export default function MainNavigator() {
 						top: -35,
 						borderRadius: 40,
 						elevation: 20,
+						zIndex: 100,
 					},
 					renderChild: () => (
 						<Image
@@ -90,7 +94,6 @@ export default function MainNavigator() {
 					renderChild: () => (
 						<Ionicons name="person-outline" size={40} color="black" />
 					),
-					notshowBottomNavigation: true,
 				}}
 			/>
 		</My.Navigator>

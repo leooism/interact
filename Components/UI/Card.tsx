@@ -1,7 +1,7 @@
 import React, { PropsWithChildren } from "react";
 import { View, StyleSheet } from "react-native";
 
-const Card = (props: { style: Object; children: PropsWithChildren }) => {
+const Card = (props: { style: Object; children: React.ReactNode }) => {
 	return (
 		<View style={{ ...styles.Card, ...props.style }}>{props.children}</View>
 	);

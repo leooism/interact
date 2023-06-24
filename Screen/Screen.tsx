@@ -1,10 +1,10 @@
 import { PropsWithChildren } from "react";
-import { StatusBar, View } from "react-native";
+import { SafeAreaView, StatusBar } from "react-native";
 
 export default function Screen(props: PropsWithChildren) {
 	return (
-		<View style={{ paddingTop: StatusBar.currentHeight }}>
+		<SafeAreaView style={{ paddingTop: StatusBar.currentHeight, flex: 1 }}>
 			{props.children}
-		</View>
+		</SafeAreaView>
 	);
 }

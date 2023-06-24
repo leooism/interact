@@ -4,35 +4,50 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import ForgotPassword from "./Screen/ForgotPassword";
 const Stack = createNativeStackNavigator();
-import { createMyNavigator } from "./BottomNavigation";
-import MainDashboard from "./Screen/MainDashboard";
-import React from "react";
+import React, { useState } from "react";
+import MainNavigator from "./Navigator/MainNavigator";
+import PersonalInfo from "./Screen/PersonalInfo";
 
 export default function App() {
+	const [isLoggedIn, setIsLoggedIn] = useState(true);
 	return (
 		<NavigationContainer>
 			<Stack.Navigator>
-				<Stack.Screen
-					name="login"
-					component={Login}
-					options={{
-						headerShown: false,
-					}}
-				/>
-				<Stack.Screen
-					name="ForgotPassword"
-					component={ForgotPassword}
-					options={{
-						headerShown: false,
-					}}
-				/>
-				<Stack.Screen
-					name="Home"
-					component={MainDashboard}
-					options={{
-						headerShown: false,
-					}}
-				/>
+				{!isLoggedIn ? (
+					<>
+						<Stack.Screen
+							name="login"
+							component={Login}
+							options={{
+								headerShown: false,
+							}}
+						/>
+						<Stack.Screen
+							name="ForgotPassword"
+							component={ForgotPassword}
+							options={{
+								headerShown: false,
+							}}
+						/>
+					</>
+				) : (
+					<>
+						<Stack.Screen
+							name="Home"
+							component={MainNavigator}
+							options={{
+								headerShown: false,
+							}}
+						/>
+						<Stack.Screen
+							name="PersonalInfo"
+							component={PersonalInfo}
+							options={{
+								headerShown: false,
+							}}
+						/>
+					</>
+				)}
 			</Stack.Navigator>
 		</NavigationContainer>
 	);
