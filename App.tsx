@@ -3,10 +3,10 @@ import Login from "./Screen/Login";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import ForgotPassword from "./Screen/ForgotPassword";
-const Stack = createNativeStackNavigator();
 import React, { useState } from "react";
 import MainNavigator from "./Navigator/MainNavigator";
 import PersonalInfo from "./Screen/PersonalInfo";
+const Stack = createNativeStackNavigator();
 
 export default function App() {
 	const [isLoggedIn, setIsLoggedIn] = useState(true);

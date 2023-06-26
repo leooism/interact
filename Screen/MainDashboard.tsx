@@ -9,17 +9,13 @@ import {
 	Image,
 } from "react-native";
 import Screen from "../Screen/Screen";
-import { Ionicons } from "@expo/vector-icons";
-import { FontAwesome, FontAwesome5 } from "@expo/vector-icons";
 import Carousel from "../Components/Carousel";
 import Card from "../Components/UI/Card";
-import { Feather } from "@expo/vector-icons";
-import { Entypo, AntDesign } from "@expo/vector-icons";
 import Header from "../Components/Header";
-const data = [{ value: 15 }, { value: 30 }, { value: 26 }, { value: 40 }];
+import { Feather, Entypo } from "@expo/vector-icons";
+import InteractApp from "../Screen/InteractApp";
 
-import { Octicons } from "@expo/vector-icons";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import AppNavigator from "../Navigator/AppNavigator";
 
 const MainDashboard = () => {
 	const { width } = useWindowDimensions();
@@ -98,76 +94,7 @@ const MainDashboard = () => {
 						</Card>
 					</View>
 				</ScrollView>
-				<View style={[styles.container, { width }]}>
-					<Text style={{ fontSize: 25 }}>Apps</Text>
-					<View
-						style={{
-							flexDirection: "row",
-							flexWrap: "wrap",
-							justifyContent: "space-evenly",
-							padding: 10,
-							gap: 10,
-						}}
-					>
-						<Pressable>
-							<Card style={styles.iconCard}>
-								<Octicons
-									name="file-directory"
-									size={50}
-									style={{ color: "red" }}
-								/>
-								<Text>Directory</Text>
-							</Card>
-						</Pressable>
-						<Pressable>
-							<Card style={styles.iconCard}>
-								<MaterialCommunityIcons
-									name="account-group-outline"
-									size={50}
-									color="red"
-								/>
-								<Text style={{ color: "black" }}>Board of Directors</Text>
-							</Card>
-						</Pressable>
-						<Pressable>
-							<Card style={styles.iconCard}>
-								<FontAwesome5 name="blog" size={50} color="red" />
-								<Text style={{ color: "black" }}>Blogs</Text>
-							</Card>
-						</Pressable>
-						<Pressable>
-							<Card style={styles.iconCard}>
-								<FontAwesome5 name="clipboard" size={50} color="red" />
-								<Text style={{ color: "black" }}>Attendence</Text>
-							</Card>
-						</Pressable>
-						<Pressable>
-							<Card style={styles.iconCard}>
-								<FontAwesome name="photo" size={50} color="red" />
-								<Text style={{ color: "black" }}>Gallery</Text>
-							</Card>
-						</Pressable>
-						<Pressable>
-							<Card style={styles.iconCard}>
-								<FontAwesome name="search" size={50} color="red" />
-								<Text style={{ color: "black" }}>Search Club</Text>
-							</Card>
-						</Pressable>
-						<Pressable>
-							<Card style={styles.iconCard}>
-								<AntDesign name="bells" size={50} color="red" />
-								<Text style={{ color: "black" }}>Anouncements</Text>
-							</Card>
-						</Pressable>
-						<Pressable>
-							<Card style={styles.iconCard}>
-								<Entypo name="documents" size={50} color="red" />
-
-								<Text style={{ color: "black" }}>Proposals</Text>
-							</Card>
-						</Pressable>
-					</View>
-				</View>
+				<InteractApp />
 			</ScrollView>
 		</Screen>
 	);
@@ -196,12 +123,5 @@ const styles = StyleSheet.create({
 	hero: {
 		gap: 20,
 		width: "100%",
-	},
-	iconCard: {
-		backgroundColor: "white",
-		elevation: 10,
-		justifyContent: "center",
-		alignItems: "center",
-		gap: 10,
 	},
 });

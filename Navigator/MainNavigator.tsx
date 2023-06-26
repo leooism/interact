@@ -7,6 +7,7 @@ import { Ionicons } from "@expo/vector-icons";
 
 import React from "react";
 import MainDashboard from "../Screen/MainDashboard";
+import AppNavigator from "./AppNavigator";
 function Test() {
 	return <Text>Hi</Text>;
 }
@@ -56,7 +57,7 @@ export default function MainNavigator() {
 
 			<My.Screen
 				name="Interact"
-				component={MainDashboard}
+				component={AppNavigator}
 				options={{
 					type: "image",
 					style: {
