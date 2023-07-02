@@ -27,6 +27,7 @@ const loginCredientalsReducer = (
 ): loginCredentialsType => {
 	switch (action.type) {
 		case "email":
+			if (!action.playload.includes("@")) return;
 			return {
 				...state,
 				email: action.payload,
@@ -66,6 +67,7 @@ const Login = () => {
 
 		return () => clearTimeout(unsubscribe);
 	}, [loginCredentials.email, loginCredentials.password]);
+
 	const onLoginHandler = () => {
 		navigation.navigate("Home");
 		return;
@@ -82,7 +84,6 @@ const Login = () => {
 			);
 			return;
 		}
-		// console.log(loginCredentials);
 	};
 	const toggleThemeHandler = () => {
 		setIsDarkTheme((prev) => !prev);

@@ -70,7 +70,7 @@ const InteractApp = () => {
 				</Pressable>
 				<Pressable
 					onPress={() => {
-						navigator.navigate("");
+						navigator.navigate("blogs");
 					}}
 				>
 					<Card style={styles.iconCard}>

@@ -12,7 +12,7 @@ export default function App() {
 	const [isLoggedIn, setIsLoggedIn] = useState(true);
 	return (
 		<NavigationContainer>
-			<Stack.Navigator>
+			<Stack.Navigator id="test">
 				{!isLoggedIn ? (
 					<>
 						<Stack.Screen

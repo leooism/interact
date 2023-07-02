@@ -14,7 +14,9 @@ function Test() {
 export default function MainNavigator() {
 	return (
 		<My.Navigator
+			id="bottomTab"
 			tabBarStyle={{
+				// display: "none",
 				width: "100%",
 				elevation: 2,
 				borderTopEndRadius: 10,
@@ -58,23 +60,27 @@ export default function MainNavigator() {
 			<My.Screen
 				name="Interact"
 				component={AppNavigator}
-				options={{
-					type: "image",
-					style: {
-						width: 70,
-						height: 70,
-						backgroundColor: "white",
-						top: -35,
-						borderRadius: 40,
-						elevation: 20,
-						zIndex: 100,
-					},
-					renderChild: () => (
-						<Image
-							source={{ uri: "https://interactclubofggic.org/log.png" }}
-							style={{ height: "100%", width: "100%", borderRadius: 40 }}
-						/>
-					),
+				options={(route) => {
+					return {
+						type: "image",
+						style: {
+							width: 70,
+							height: 70,
+							backgroundColor: "white",
+							top: -35,
+							borderRadius: 40,
+							elevation: 20,
+							zIndex: 100,
+						},
+
+						renderChild: () => (
+							<Image
+								source={{ uri: "https://interactclubofggic.org/log.png" }}
+								style={{ height: "100%", width: "100%", borderRadius: 40 }}
+							/>
+						),
+						tabBarVisible: false,
+					};
 				}}
 			/>
 			<My.Screen
